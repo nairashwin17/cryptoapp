@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{cryptoData.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <highcharts-chart
+  [Highcharts] = "highcharts" 
+  [options] = "chartOptions" style="width:95%;margin:auto;">
+</highcharts-chart>
+</ion-content>

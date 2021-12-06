@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="primary">
+      <ion-button color="primary" (click)="refreshList()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshList($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <div *ngFor="let list of cryptoList">
+      <ion-item  lines="none" (click)="gotoCryptoDetails(list)">
+        <ion-label>{{list.name}}</ion-label>
+        <ion-label slot="end">$ {{list.quote.USD.price | number : '1.2-2'}}</ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
